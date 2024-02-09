@@ -3,9 +3,11 @@ package tn.esprit.springfirst.entities;
 import jakarta.persistence.*;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
-@Table(name="TPliste")
+@Table(name="Pitste")
 public class Piste implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -17,5 +19,11 @@ public class Piste implements Serializable {
 
     private int length;
     private int slope;
+    @ManyToMany
+    @JoinTable( name = "join_piste_skier",
+            joinColumns = @JoinColumn( name = "numPiste" ),
+            inverseJoinColumns = @JoinColumn( name = "numSkier" ) )
+    private List<Skier> skiers=new ArrayList<>();
+
 
 }
