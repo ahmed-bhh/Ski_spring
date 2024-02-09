@@ -17,7 +17,7 @@ public class Skier implements Serializable {
 private long numSkier;
 private String firstName;
 private String lastName;
-
+@Temporal(TemporalType.DATE)
 private Date dateOfBirth;
 
 private String city;
