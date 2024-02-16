@@ -19,10 +19,7 @@ public class Piste implements Serializable {
 
     private int length;
     private int slope;
-    @ManyToMany
-    @JoinTable( name = "join_piste_skier",
-            joinColumns = @JoinColumn( name = "numPiste" ),
-            inverseJoinColumns = @JoinColumn( name = "numSkier" ) )
+    @ManyToMany(cascade = CascadeType.ALL,mappedBy = "pistes")
     private List<Skier> skiers=new ArrayList<>();
 
 

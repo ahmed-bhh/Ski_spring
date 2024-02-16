@@ -1,6 +1,7 @@
 package tn.esprit.springfirst.entities;
 
 import jakarta.persistence.*;
+import org.yaml.snakeyaml.DumperOptions;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -21,16 +22,13 @@ private String lastName;
 private Date dateOfBirth;
 
 private String city;
-    @ManyToMany
-    @JoinTable( name = "join_piste_skier",
-            joinColumns = @JoinColumn( name = "numSkier" ),
-            inverseJoinColumns = @JoinColumn( name = "numPiste" ) )
+    @ManyToMany(cascade = CascadeType.ALL)
 private List<Piste> pistes=new ArrayList<>();
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy="skier")
     private Set<Registration> registrationSet;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     Subscription subscription;
 
 }

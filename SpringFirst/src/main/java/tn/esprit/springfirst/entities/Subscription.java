@@ -16,8 +16,13 @@ public class Subscription implements Serializable {
     private Date startDate;
     @Temporal(TemporalType.DATE)
     private Date endDate;
-
     private float price;
+
+    @ManyToOne
+private Skier skier;
+    @ManyToOne
+
+    Course course;
 @Enumerated(EnumType.STRING)
     private TypeSubscription typeSubscription;
 
