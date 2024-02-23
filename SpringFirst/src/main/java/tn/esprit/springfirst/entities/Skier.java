@@ -1,6 +1,10 @@
 package tn.esprit.springfirst.entities;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 import org.yaml.snakeyaml.DumperOptions;
 
 import java.io.Serializable;
@@ -11,11 +15,15 @@ import java.util.Set;
 
 @Entity
 @Table(name="Skier")
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class Skier implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="numSkier")
-private long numSkier;
+private Integer numSkier;
 private String firstName;
 private String lastName;
 @Temporal(TemporalType.DATE)
