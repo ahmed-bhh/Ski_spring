@@ -5,5 +5,5 @@ import org.springframework.stereotype.Repository;
 import tn.esprit.springfirst.entities.Course;
 @Repository
 
-public interface CourseRepository extends JpaRepository<Course,Long> {
+public interface CourseRepository extends JpaRepository<Course,Integer> {
 }

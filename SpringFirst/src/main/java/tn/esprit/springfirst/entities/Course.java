@@ -19,7 +19,7 @@ public class Course implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="idCourse")
-    private Long numCourse;
+    private Integer numCourse;
     private  int level;
     @Enumerated(EnumType.STRING)
     private TypeCourse typeCourse;

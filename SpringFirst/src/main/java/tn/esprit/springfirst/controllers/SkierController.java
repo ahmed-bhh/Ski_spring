@@ -34,4 +34,8 @@ public class SkierController {
     public Skier updateSkier(@RequestBody Skier skier){
         return skierService.updateSkier(skier);
     }
+    @PutMapping("/add")
+    public Skier addSkier(@RequestBody Skier skier){
+        return skierService.addSkier(skier);
+    }
 }
