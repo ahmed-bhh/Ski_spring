@@ -18,7 +18,7 @@ public class Registration implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "idRegistration")
-    private long numRegistration;
+    private Long numRegistration;
     private int numWeek;
 
     @ManyToOne
