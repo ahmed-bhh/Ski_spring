@@ -1,5 +1,6 @@
 package tn.esprit.springfirst.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -30,11 +31,14 @@ private String lastName;
 private Date dateOfBirth;
 
 private String city;
+@JsonIgnore
     @ManyToMany(cascade = CascadeType.ALL)
 private List<Piste> pistes=new ArrayList<>();
+    @JsonIgnore
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy="skier")
     private Set<Registration> registrationSet;
+    @JsonIgnore
 
     @OneToOne(cascade = CascadeType.ALL)
     Subscription subscription;

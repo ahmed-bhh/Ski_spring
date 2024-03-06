@@ -1,5 +1,6 @@
 package tn.esprit.springfirst.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -29,6 +30,7 @@ public class Course implements Serializable {
     private float price;
 
     private int timeSlot;
+    @JsonIgnore
 
     @OneToMany(cascade = CascadeType.ALL,mappedBy = "course")
     private Set<Registration> registrationSet;
